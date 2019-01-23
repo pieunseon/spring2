@@ -37,6 +37,6 @@ public class AccountServiceImp implements AccountService{
 	public boolean isDuplicated(String id) {
 		if(accountDao.getAccount(id) !=null)
 		return true; 	//중복 되면
-		return false;  //중복이 안되면
-	} 
+		return false;   //중복이 안되면
+	}                  //[ajax] 사용 처 :  아이디 중복검사, pagination, 댓글
 }

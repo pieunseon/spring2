@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>회원가입</h1>
-	<form method="post" action="<%=request.getContextPath()%>/signup">
+	<form method="post" action="<%=request.getContextPath()%>/signup" id="form">
 		<div>
 			아이디<input type="text" name="id" id="id">
 			<button id="dup" type="button">중복체크</button>   <!-- 기본 type 이 submit이기 때문 -->
@@ -25,10 +25,10 @@
 			<input type="radio" value="female" name="gender" id="female">
 			<label for="female">여성</label>
 		</div>
-		<button>회원가입</button>
+		<button type="button" id="btnOk">회원가입</button>
 	</form>
-	<script type="text/javascript">
-		 var dup;
+	<script type="text/javascript">  //ajax이용한 아이디 중복검사 코드
+		 var dup=0;
 	     $('#dup').click( function() {
 	        var id = "";
 	         id = $('#id').val();
@@ -41,16 +41,28 @@
 	             contentType:"application/json; charset=UTF-8",
 	       		 
 	             success: function(data) {   //성공했을때 실행되는 함수
-	            	 console.log(data.dup);
 	            	 if(data.dup){
+	            		 dup=1;
 	            		 alert('이미 사용중인 아이디 입니다.');
-	            	 }
-	            	 else{
+	            	 }else{
+	            		 dup = -1;
 	            		 alert('사용가능한 아이디 입니다.');
 	            	 }
 	             }
 	        });
       })
+      
+      $('#btnOk').click(function(){
+    	 if(dup == 0){
+    		 alert("아이디 중복 체크하세요");
+    		 return false;
+    	 } 
+    	 if(dup ==1){
+    		 alert("중복된 아이디입니다. 다른아이디를 입력하세요");
+    		 return false;
+    	 }
+    	 	return true;
+      });
 	</script>
 </body>
 </html>
