@@ -5,9 +5,12 @@ import java.util.Date;
 public class AccountVo {
 	private String id;
 	private String pw;
+	private String email;
 	private String gender;
 	private Date registered_date;
 	private String authority;
+	
+
 	public String getId() {
 		return id;
 	}
@@ -38,10 +41,17 @@ public class AccountVo {
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	@Override
 	public String toString() {
-		return "AccountVo [id=" + id + ", pw=" + pw + ", gender=" + gender + ", registered_date=" + registered_date
-				+ ", authority=" + authority + "]";
+		return "AccountVo [id=" + id + ", pw=" + pw + ", email=" + email + ", gender=" + gender + ", registered_date="
+				+ registered_date + ", authority=" + authority + "]";
 	}
 	
 }
