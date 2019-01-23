@@ -6,4 +6,4 @@
   <select id="getAccount" resultType="kr.green.springtest.vo.AccountVo">
     select * from account where id = #{id}
   </select>
-</mapper>
+</mapper> 

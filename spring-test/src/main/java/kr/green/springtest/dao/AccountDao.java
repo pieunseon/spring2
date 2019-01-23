@@ -7,3 +7,4 @@ import kr.green.springtest.vo.AccountVo;
 public interface AccountDao {
 	public AccountVo getAccount(@Param("id")String id);
 }
+ 

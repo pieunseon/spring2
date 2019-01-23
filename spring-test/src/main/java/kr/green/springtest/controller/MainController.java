@@ -27,7 +27,7 @@ public class MainController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String homePost(Model model, AccountVo loginInfo) {
 		 AccountVo user =accountService.signin(loginInfo);
-		 System.out.println(user);
+		 model.addAttribute("user",user);
 		return "redirect:/";
 	}
 }
