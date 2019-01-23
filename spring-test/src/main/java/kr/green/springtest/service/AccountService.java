@@ -7,5 +7,6 @@ public interface AccountService {
 	AccountVo signin(AccountVo loginInfo);
 
 	boolean signup(AccountVo userInfo);
+	boolean isDuplicated(String id);
 
 }

@@ -31,5 +31,12 @@ public class AccountServiceImp implements AccountService{
 		userInfo.setPw(encPw);
 		accountDao.setAccount(userInfo);
 		return true;
+	}
+
+	@Override
+	public boolean isDuplicated(String id) {
+		if(accountDao.getAccount(id) !=null)
+		return true; 	//중복 되면
+		return false;  //중복이 안되면
 	} 
 }

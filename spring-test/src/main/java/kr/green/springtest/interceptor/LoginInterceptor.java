@@ -14,7 +14,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public void postHandle(
-	    HttpServletRequest request, 
+	    HttpServletRequest request,    //uri정보들
 	    HttpServletResponse response, 
 	    Object handler, 
 	    ModelAndView modelAndView)
