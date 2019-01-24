@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/bootstrap.css">
 </head>
 <body> <!-- 게시판 테이블 만들기 -->
-	<table class="table table-dark table-striped">
+	<table class="table table-striped">
 		<tr>
 			<td>번호</td>
 			<td>제목</td>
@@ -18,7 +18,7 @@
 		<c:forEach items="${list}" var="board">
 			<tr>
 				<td>${board.id}</td>
-				<td>${board.title}</td>
+				<td><a href="<%=request.getContextPath()%>/bbs/detail?id=${board.id}">${board.title}</a></td>
 				<td>${board.writer}</td>
 			</tr>
 		</c:forEach>
@@ -26,5 +26,6 @@
 	<a href="<%=request.getContextPath() %>/bbs/register">
 		<button>등록</button>    <!-- a태그 안에 button  -->
 	</a>
+	
 </body>
 </html>

@@ -7,6 +7,12 @@ import kr.green.springtest.vo.BoardVo;
 public interface BoardDao {
 
 	public List<BoardVo> getBoards();
-	public void setBoard(@Param("board")BoardVo board); 
+	
+	public void setBoard(@Param("board")BoardVo board);
+	public void deleteBoard(@Param("id")Integer id);
+	public void updateBoard(@Param("board")BoardVo board);
+
+	public BoardVo getBoard(Integer id);   
 
 }
+ 
