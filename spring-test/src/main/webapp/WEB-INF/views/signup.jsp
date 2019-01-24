@@ -61,7 +61,8 @@
     		 alert("중복된 아이디입니다. 다른아이디를 입력하세요");
     		 return false;
     	 }
-    	 	return true;
+    	 $('#form').submit();       //회원가입 버튼 누르면 회원가입 실행됨
+    	 return true;
       });
 	</script>
 </body>
