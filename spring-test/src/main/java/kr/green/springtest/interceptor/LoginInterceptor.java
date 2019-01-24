@@ -20,7 +20,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	    ModelAndView modelAndView)
 	    throws Exception {
 	    ModelMap modelMap = modelAndView.getModelMap();
-	    AccountVo user = (AccountVo)modelMap.get("user");
+	    AccountVo user = (AccountVo)modelMap.get("user");   //session에 저장을 해야하기 때문에 AccountVo로 형변환을 함
 
 	    if(user != null) {
 	        HttpSession session = request.getSession();

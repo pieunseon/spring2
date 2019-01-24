@@ -29,7 +29,7 @@ public class MainController {
 		return "home";
 	}
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String homePost(Model model, AccountVo loginInfo) {
+	public String homePost(Model model, AccountVo loginInfo) {  //자료형 type에 유의해야함(ex:date)
 		 AccountVo user =accountService.signin(loginInfo);
 		 model.addAttribute("user",user);
 		return "redirect:/";
