@@ -7,5 +7,7 @@ import kr.green.springtest.vo.BoardVo;
 public interface BoardService {
 
 	public List<BoardVo> getBoards();
+ 
+	public void registerBoard(BoardVo board);
 
 }
