@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/bootstrap.css">
 </head>
 <body> <!-- 게시판 테이블 만들기 -->
+	<c:if test="${user !=null }">      <!-- 로그아웃 -->
+	<a href="<%=request.getContextPath() %>/signout">로그아웃</a>
+	</c:if>
+	<c:if test="${user ==null }">     
+	<a href="<%=request.getContextPath() %>/">로그인</a>
+	</c:if>
+
 	<table class="table table-striped">
 		<tr>
 			<td>번호</td>
