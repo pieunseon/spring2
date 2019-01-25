@@ -36,6 +36,8 @@
 			</interceptor>
 			<interceptor>   <!-- 회원만 게시판 등록가능 -->
 				<mapping path="/bbs/register"/>
+				<mapping path="/bbs/delete*"/>
+				<mapping path="/bbs/modify"/>
 				<beans:ref bean="authInterceptor"/>
 			</interceptor>
 			<interceptor>  <!-- 비회원은 메인 페이지, 회원가입 페이지로보내기 -->
