@@ -8,12 +8,24 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/bootstrap.css">
 </head>
-<body> <!-- 게시판 테이블 만들기 -->
+<body> <!-- 게시판 테이블 만들기-->
+	<!-- 로그인 로그아웃 코드
+	<c:choose>
+		<c:when test="${user != null}">
+			<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
+		</c:when>
+		<c:otherwise>
+			<a href="<%=request.getContextPath()%>/">로그인</a>
+		</c:otherwise>
+	</c:choose>
+	 -->
 	<c:if test="${user !=null }">      <!-- 로그아웃 -->
 	<a href="<%=request.getContextPath() %>/signout">로그아웃</a>
 	</c:if>
 	<c:if test="${user ==null }">     
-	<a href="<%=request.getContextPath() %>/">로그인</a>
+	<a href="<%=request.getContextPath() %>/">
+	<button class="btn btn-info">로그인</button> 
+	</a>
 	</c:if>
 
 	<table class="table table-striped">
@@ -31,7 +43,7 @@
 		</c:forEach>
 	</table>
 	<a href="<%=request.getContextPath() %>/bbs/register">
-		<button>등록</button>    <!-- a태그 안에 button  -->
+		<button class="btn btn-primary">등록</button>    <!-- a태그 안에 button  -->
 	</a>
 	
 </body>
