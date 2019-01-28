@@ -49,11 +49,11 @@ public class MainController {
 			 return "redirect:/";
 	     return "redirect:/signup";
 	}
-	@RequestMapping(value = "/signup/dup")
+	@RequestMapping(value = "/signup/dup") 
 	@ResponseBody
 	public Map<Object,Object> idcheck(@RequestBody String id) {
-		Map<Object,Object> map =new HashMap<Object,Object>();
-		 boolean dup =accountService.isDuplicated(id);
+		Map<Object,Object> map =new HashMap<Object,Object>();  //id, pw
+		 boolean dup =accountService.isDuplicated(id);  //해당하는 id가 있는지 없는지 확인 boolean타입으로 저장.
 		 map.put("dup",dup);
 		 return map;
 	}
